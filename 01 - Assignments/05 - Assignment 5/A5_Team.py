@@ -16,6 +16,13 @@
                             #Functions 
 #=====================================================================
 #--Exception Handling -- ?? -- Needs to be done
+def exceptionHandling(trying, excepting): #Try except, prints out the error and has two functions as
+                                            #parameters. TENTATIVE
+    try:
+        trying()
+    except Exception as err:
+        print("Error:", err)
+        excepting()
 
 ###############################
 #Get Decision: Will recieve both upper and lower cases of both choices, should have
@@ -23,17 +30,11 @@
 
 def getDecision(c1, c2, c3, c4): #The four valid choices
     choice = input("Enter your selection: ") #prompts user for their selection
-    valid_choice = False #flag
-
-    if choice in [c1, c2, c3, c4]: #if choice is in the allowed, flag allows to continue
-        valid_choice = True
-
-    while valid_choice == False: #Validation loop to re-enter the choice and check flag
+    
+    while choice not in [c1, c2, c3, c4]: #Validation loop to re-enter the choice and check if in choices
         print("Invalid Choice!\n")
         choice = input("Re-enter your selection: ")
-        if choice in [c1, c2, c3, c4]:
-            valid_choice = True
-
+        
     return choice #returning the choice
 
 
@@ -53,12 +54,8 @@ def openFile():
     if file_mode == "r": #Reading the file
         while namedFile != "Brownie.txt": #V-loop to make sure that the name is Brownie.txt
             print("You have to use 'Brownie.txt' to use mode r, try again.\n")
-            namedFile = input("Name of File: ")
-
-        while ".txt" not in namedFile: #V-loop ensuring that the extension is txt
-            print("File has to has a .txt extension, try again")
-            namedFile = input("Name of File: ")
-
+            namedFile = input("Name of File: ") #Don't have to check for file type (.txt), it has to be
+                                                #Brownie.txt
     else:
         while namedFile == "Brownie.txt": #V-loop ensuring that the file name is not Brownie.txt
             print("You need to use a different file name, not 'Brownie.txt', try again.\n")

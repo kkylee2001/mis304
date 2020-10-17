@@ -1,0 +1,24 @@
+1) Brownie: Chocolate Fudge Brownie
+Price: $2.59
+Cost: $0.30
+Profit: $2.29
+Profit Margin: 88.42%
+
+2) Brownie: Cream Cheese Brownie
+Price: $4.59
+Cost: $1.80
+Profit: $2.79
+Profit Margin: 60.78%
+
+3) Brownie: Chocolate Fudge Brownie
+Price: $2.59
+Cost: $0.45
+Profit: $2.14
+Profit Margin: 82.63%
+
+4) Brownie: Chocolate Fudge Brownie
+Price: $2.59
+Cost: $0.50
+Profit: $2.09
+Profit Margin: 80.69%
+
