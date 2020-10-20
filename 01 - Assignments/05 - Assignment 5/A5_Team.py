@@ -173,26 +173,30 @@ def printBusinessReport(txt_file): #Parameter: the Brownie.txt file_mode
 def main(): #Main Function -- Calls program
     enter_loop = '' #Allows the use to go through the program multiple times
     while enter_loop == '': #Simply pressing return/enter on keyboard
-        print("\nWelcome to Mr. Brown's Brownie Shop\n===================")
-        print("P or p -- (P)rint Brownie Report")
-        print("F or f -- Update (F)ile") #intro
-        mode = getDecision("P", "p", "F", "f") #Four arguments, P, p, F, f
+        try:
+            print("\nWelcome to Mr. Brown's Brownie Shop\n===================")
+            print("P or p -- (P)rint Brownie Report")
+            print("F or f -- Update (F)ile") #intro
+            mode = getDecision("P", "p", "F", "f") #Four arguments, P, p, F, f
 
-        if mode in ["P", "p"]: #if it's P or p
-            print_file = openFile() #open file and read
-            printBusinessReport(print_file) #print the business report
+            if mode in ["P", "p"]: #if it's P or p
+                print_file = openFile() #open file and read
+                printBusinessReport(print_file) #print the business report
 
 
-        else: #if not p or P
-            print("\n\nInput File-------") #prompt for input
-            input_file = openFile()
+            else: #if not p or P
+                print("\n\nInput File-------") #prompt for input
+                input_file = openFile()
 
-            print("\nOutput File--------") #prompt for output 
-            output_file = openFile()
+                print("\nOutput File--------") #prompt for output 
+                output_file = openFile()
 
-            updateFile(inputting=input_file, updating=output_file) #writing to the update file
-        
-        enter_loop = input("Press return to repeat, any key to end: ") #Repeat program or not
+                updateFile(inputting=input_file, updating=output_file) #writing to the update file
+            
+            enter_loop = input("Press return to repeat, any key to end: ") #Repeat program or not
+        except Exception as err:
+            print("ERROR:", err)
+            enter_loop = input("Press return to repeat, any key to end: ") #Repeat program or not
 
 
 
