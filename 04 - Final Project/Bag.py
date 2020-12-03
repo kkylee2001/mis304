@@ -6,10 +6,10 @@ class Bag:
         self.__inventory = inventory
 
     def __str__(self):
-        return f"\n\nBag ID is {self.__bag_id}\n" \
-               f"Color is {self.__color} \n" \
-               f"Price is ${self.__price} \n" \
-               f"Inventory is {self.__inventory}" \
+        return f"\n\nBag ID is {self.get_id()}\n" \
+               f"Color is {self.get_color()} \n" \
+               f"Price is ${self.get_price()} \n" \
+               f"Inventory is {self.get_inventory()}" \
 
     def set_id(self, x):
         self.__bag_id = x
@@ -34,7 +34,7 @@ class Bag:
         return self.__bag_id
 
     def get_price(self):
-        return self.__price
+        return format(self.__price, '.2f')
 
     def get_color(self):
         return self.__color

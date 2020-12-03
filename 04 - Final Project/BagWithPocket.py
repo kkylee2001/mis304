@@ -10,13 +10,13 @@ class BagWithPocket(Bag):
 
     def __str__(self):
         return f"{super().__str__()}" \
-               f"\nNumber of pockets is {self.__numPocket}\n" \
-               f"Price of pockets is ${self.__pricePocket} \n" \
+               f"\nNumber of pockets is {self.get_numPocket()}\n" \
+               f"Price of pockets is ${self.get_pricePocket()} \n" \
                f"Total pocket price is ${self.calculate_pocketPrice()}"
 
     def calculate_pocketPrice(self):
         per_pocket_price = self.__pricePocket * self.__numPocket
-        return round(per_pocket_price, 2)
+        return format(per_pocket_price, '.2f')
 
     def set_numPocket(self, x):
         self.__numPocket = x
@@ -29,7 +29,7 @@ class BagWithPocket(Bag):
         return self.__numPocket
 
     def get_pricePocket(self):
-        return self.__pricePocket
+        return format(self.__pricePocket, '.2f')
 
 
 

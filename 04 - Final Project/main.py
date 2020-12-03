@@ -3,7 +3,8 @@ from BagWithPocket import BagWithPocket
 
 
 def displayMenu():
-    print("Welcome to the Bag Shop\n====================")
+    print("\n\nWelcome to the Bag Shop")
+    print("==========================")
     print("x-print bag information")
     print('y-update number of pockets')
     print('z-buy bag\n\n')
@@ -15,7 +16,7 @@ def printBagInformation(list_of_bags):
 
 
 def updatePockets(list_of_bags):
-    pocket_upadted = 0
+    pocket_updated = 0
     bag_found = 0
     id = input("\nPlease Enter the bag ID: ")
     for bag in list_of_bags:
@@ -26,11 +27,13 @@ def updatePockets(list_of_bags):
                 while pocket_change < 1 or pocket_change > 4:
                     print("It has to be between 1 and 4")
                     pocket_change = int(input("Please enter the number of pockets: "))
-                pocket_upadted = 1
+                bag.set_numPocket(pocket_change)
+                pocket_updated = 1
+                print(f"You have updated the {bag.get_color()} bag to have {pocket_change} pockets")
             break
     if bag_found == 0:
         print("The bag was not found; no update was conducted")
-    elif bag_found == 1 and pocket_upadted == 0:
+    elif bag_found == 1 and pocket_updated == 0:
         print("The bad does not have pockets; no update was conducted")
 
 
