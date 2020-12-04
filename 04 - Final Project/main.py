@@ -1,6 +1,4 @@
-from Bag import Bag
-from BagWithPocket import BagWithPocket
-
+from Bag import *
 
 def displayMenu():
     print("\n\nWelcome to the Bag Shop")
