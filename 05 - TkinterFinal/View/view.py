@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from Bag import *
+from Model.Bag import *
 
 class UI:
     def __init__(self):

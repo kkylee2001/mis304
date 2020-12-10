@@ -1,4 +1,4 @@
-from view import *
+from View.view import *
 
 def main():
     ui = UI()
